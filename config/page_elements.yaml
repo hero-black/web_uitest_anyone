@@ -1,0 +1,131 @@
+# ============================================
+# 页面元素别名注册表
+# ============================================
+# 使用方法：
+# 1. 在 Chrome 中按 F12 打开开发者工具
+# 2. 用元素选择器（左上角箭头）点击页面元素
+# 3. 在 Elements 面板中找到该元素的选择器
+# 4. 在下方对应页面中添加/修改别名和选择器
+#
+# 别名 = 测试用例 YAML 中使用的名称
+# 例如：用例中写 "点击: 登录按钮"，这里就要有 "登录按钮" 的别名
+#
+# 定位方式: css / text / placeholder / id / xpath / role / label
+# ============================================
+
+登录页:
+  用户名输入框:
+    定位方式: placeholder
+    选择器: "用户名"
+  密码输入框:
+    定位方式: id
+    选择器: "passwordRef"
+  登录按钮:
+    定位方式: css
+    选择器: "button.loginBtn"
+
+# ---- 以下页面元素需要登录后用 F12 确认并替换 TODO ----
+# 系统使用 Element UI，常见选择器模式：
+#   输入框: input.el-input__inner
+#   按钮:   button.el-button
+#   表格:   .el-table
+#   弹窗:   .el-dialog
+
+首页:
+  智慧病房:
+    定位方式: text
+    选择器: "智慧病房"
+
+数据源页:
+  数据中心:
+    定位方式: text
+    选择器: "数据中心"
+  数据对接2.0:
+    定位方式: text
+    选择器: "数据对接2.0"
+  数据源管理:
+    定位方式: text
+    选择器: "数据源管理"
+  新增数据源按钮:
+    定位方式: text
+    选择器: "新增数据源"
+  # ---- 弹窗内表单元素 ----
+  平台厂家输入框:
+    定位方式: placeholder
+    选择器: "请输入平台厂家名称"
+  接口:
+    定位方式: css
+    选择器: ".el-radio:has-text('接口')"
+  协议类型:
+    定位方式: xpath
+    选择器: "//*[@id='main']/div[1]/div[2]/div/div[2]/div/div/div/div[4]/div[1]/div/div[2]/form/div[3]/div/div/div/div/div/input"
+    # TODO: 替换为实际按钮文本
+  url:
+    定位方式: placeholder
+    选择器: "请输入URL"
+  请求方式:
+    定位方式: xpath
+    选择器: "//*[@id='main']/div[1]/div[2]/div/div[2]/div/div/div/div[4]/div[1]/div/div[2]/form/div[7]/div[4]/div/div/div/input"
+  内容类型:
+    定位方式: xpath
+    选择器: "//*[@id='main']/div[1]/div[2]/div/div[2]/div/div/div/div[4]/div[1]/div/div[2]/form/div[7]/div[5]/div/div[1]/div/input"
+
+
+    # TODO: 替换为实际按钮文本
+  视图:
+    定位方式: css
+    选择器: ".el-radio input[value='view']"
+  数据源名称输入框:
+    定位方式: placeholder
+    选择器: "请输入数据源名称"
+  数据库IP地址输入框:
+    定位方式: placeholder
+    选择器: "请输入数据库IP地址"
+  端口号输入框:
+    定位方式: placeholder
+    选择器: "请输入端口号"
+  数据库用户名输入框:
+    定位方式: placeholder
+    选择器: "请输入用户名"
+  数据库密码输入框:
+    定位方式: placeholder
+    选择器: "请输入密码"
+  数据库名称输入框:
+    定位方式: placeholder
+    选择器: "请输入数据库名"
+  连接超时时间输入框:
+    定位方式: placeholder
+    选择器: "请输入"
+  测试连接按钮:
+    定位方式: css
+    选择器: ".el-dialog button:has-text('测试连接')"
+  保存按钮:
+    定位方式: css
+    选择器: ".el-dialog button:has-text('保存')"
+
+
+任务页:
+  任务菜单:
+    定位方式: text
+    选择器: "任务"          # TODO: 替换为实际菜单文本
+  新建任务按钮:
+    定位方式: text
+    选择器: "新建"          # TODO: 替换为实际按钮文本
+  任务名称输入框:
+    定位方式: placeholder
+    选择器: "请输入名称"     # TODO: 替换为实际 placeholder
+  删除任务按钮:
+    定位方式: text
+    选择器: "删除"          # TODO: 替换为实际按钮文本
+
+通用:
+  # 多个页面共用的元素
+  保存按钮:
+    定位方式: css
+    选择器: ".el-dialog button:has-text('保存')"
+  取消按钮:
+    定位方式: css
+    选择器: ".el-dialog button:has-text('取消')"
+  确认删除按钮:
+    定位方式: css
+    选择器: ".el-message-box button:has-text('确定')"
